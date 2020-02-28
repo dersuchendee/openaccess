@@ -78,7 +78,7 @@
   .then(makeChart);
 
 function makeChart(players) {
-  var playerLabels = players.map(function(d) {return d.Comune});
+  var playerLabels = players.map(function(d) {return d.Comune = "BONDENO"});
   var weeksData = players.map(function(d) {return d.PUNTEGGIOSCUOLA1516});
 
   var chart = new Chart('chart', {
@@ -160,6 +160,7 @@ function makeChart(players) {
                 click: function(e) {
                     map.fitBounds(e.target.getBounds());
                     document.getElementById("nomecom").innerHTML = "Nome comune: "+e.target.feature.properties.NOME_COM;
+
                     
                    
             
